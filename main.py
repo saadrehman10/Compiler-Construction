@@ -13,18 +13,14 @@ fileHandler.createFile(fileNameMain01,userCode )
 fileContentsMain = fileHandler.readFile(fileNameMain01)
 wordsArray = wordSpliter.splitBySpace(fileContentsMain)
 
-# comments by saad
-# yar ya dakh na ka usercodeSplite.txt ma none  kiu save ho rah ah
-# or ya bhi dakh na ka har bar arra khud print kiu ho ta ha kahi print kia nahi ha
-# or array ko hum log derict nahi save kar sakta kia txt ma koi or file formate usr kar na para ? ?  
+#saad 
+# yar array ko dubara array ma kas type cast kara ga?
 
 testVar =(str(wordsArray))
-fileNameMain02 = "UserCodeSplit"
+fileNameMain02 = "userCodeSplit.txt"
 fileHandler.createFile(fileNameMain02,testVar)
 testArray= fileHandler.readFile(fileNameMain02)
+# yha check karo 
+print(type(testArray))
+print(testArray)
 
-print(testArray)
-print(testArray)
-print(testArray)
-print(testArray)
-print(testArray)

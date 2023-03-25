@@ -1,6 +1,6 @@
 import fileHandler
 
 def splitBySpace(fileContents):
-    words = fileContents.split(" ")
+    words = fileContents.split()
     return words
     
