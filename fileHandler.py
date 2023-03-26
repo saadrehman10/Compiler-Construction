@@ -13,4 +13,4 @@ def readFile(fileName):
 
 def appendFile(fileName,usercode):
     with open(fileName, 'a') as file:
-          file.write(usercode+'\n')
+          file.write(usercode)
