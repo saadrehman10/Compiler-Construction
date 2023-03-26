@@ -23,7 +23,7 @@ for i in range(codeLines):
     var01 = input(str(i+2)+". ")
     fileHandler.appendFile(fileNameMain01,var01+r"\n")
 
-
+print("RUNNING")
 
 """------xx------WORD SPLITTER-----xx-------"""
 fileContentsMain = fileHandler.readFile(fileNameMain01)
@@ -34,7 +34,7 @@ arrLen = len(wordsArray)
 for i in range (arrLen):
     wordsArray[i] = wordSpliter.splitBySpace(wordsArray[i])
 
-""" -----xx-------test output-----xx-------  """
+"""-----xx-------test output------xx-------"""
 print (wordsArray)
 
 result = arrayFlattener(wordsArray)
