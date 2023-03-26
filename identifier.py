@@ -57,7 +57,7 @@ def is_boolean(input_val):
 
 
 
-# ================ Function that check keyword =================
+# ================ Function that check keyword ================
 def is_in_array(input_val, array):
     """
     Checks if the input is present in the array.
