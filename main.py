@@ -33,9 +33,17 @@ wordsArray = wordSpliter.splitByN(fileContentsMain)
 arrLen = len(wordsArray)
 for i in range (arrLen):
     wordsArray[i] = wordSpliter.splitBySpace(wordsArray[i])
+wordsArray = arrayFlattener(wordsArray)
+
+arrLen = len(wordsArray)
+for i in range (arrLen):
+    wordsArray[i] = wordSpliter.splitByEquals(wordsArray[i])
+
 
 """-----xx-------test output------xx-------"""
+
+print (wordsArray)
+wordsArray = arrayFlattener(wordsArray)
 print (wordsArray)
 
-result = arrayFlattener(wordsArray)
-print(result)
+
