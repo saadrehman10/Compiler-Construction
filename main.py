@@ -23,23 +23,28 @@ for i in range(codeLines):
     var01 = input(str(i+2)+". ")
     fileHandler.appendFile(fileNameMain01,var01+r"\n")
 
-print("RUNNING")
+print("COMPILING")
 
 """------xx------WORD SPLITTER-----xx-------"""
 fileContentsMain = fileHandler.readFile(fileNameMain01)
 wordsArray = wordSpliter.splitByN(fileContentsMain)
 
+print (wordsArray)
 
 arrLen = len(wordsArray)
 for i in range (arrLen):
     wordsArray[i] = wordSpliter.splitBySpace(wordsArray[i])
+
+print (wordsArray)    
 wordsArray = arrayFlattener(wordsArray)
+
+print (wordsArray)
 
 arrLen = len(wordsArray)
 for i in range (arrLen):
     wordsArray[i] = wordSpliter.splitByEquals(wordsArray[i])
 
-
+print (wordsArray)
 """-----xx-------test output------xx-------"""
 
 print (wordsArray)

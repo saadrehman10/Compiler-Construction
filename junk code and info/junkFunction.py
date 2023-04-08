@@ -1,3 +1,4 @@
+""" -----------WORD SPLITER LOGICS------- """
 def splitByN(fileContents):
     word = []
     current = ""
@@ -24,3 +25,33 @@ def splitBySpace(fileContents):
         words.append (fileContents[:index])
         fileContents = fileContents[index + 1:]
     return words
+
+""" ----------CHT GPT LOGICS-------- """
+    
+def break_and_concat(string):
+  parts = string.split('=')
+  output = []
+  for part in parts[:-1]:
+    output.append(part)
+    output.append('=')
+  output.append(parts[-1])
+  return output
+
+
+
+def break_and_concat(string):
+  parts = []
+  part = ""
+  for char in string:
+    if char == '=':
+      parts.append(part)
+      part = ""
+    else:
+      part += char
+  parts.append(part)
+  output = []
+  for part in parts[:-1]:
+    output.append(part)
+    output.append('=')
+  output.append(parts[-1])
+  return output

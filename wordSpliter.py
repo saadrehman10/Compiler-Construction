@@ -12,28 +12,21 @@ def splitByN(fileContents):
             words.append (fileContents)
             break
         words.append (fileContents[:index])
+        words.append ("\n")
         fileContents = fileContents[index + 1:]
     return words
 
-def splitByEquals(fileContents):
-    word = []
-    current = ""
-    for char in fileContents:
-        if char == "=":
-            word.append(current)
-            current = ""
-        else:
-            current += char
-    word.append(current)
-    return word
 
-    """ words = []
+def splitByEquals(fileContents):
+ 
+    words = []
     while fileContents:
         index = fileContents.find ("=")
         if index == -1:
             words.append (fileContents)
             break
         words.append (fileContents[:index])
+        words.append ("=")
         fileContents = fileContents[index + 1:]
-    return words """
+    return words
 
