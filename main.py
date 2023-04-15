@@ -29,26 +29,43 @@ print("COMPILING")
 fileContentsMain = fileHandler.readFile(fileNameMain01)
 wordsArray = wordSpliter.splitByN(fileContentsMain)
 
-print (wordsArray)
+
 
 arrLen = len(wordsArray)
 for i in range (arrLen):
-    wordsArray[i] = wordSpliter.splitBySpace(wordsArray[i])
-
-print (wordsArray)    
+    wordsArray[i] = wordSpliter.splitBySpace(wordsArray[i])  
 wordsArray = arrayFlattener(wordsArray)
 
-print (wordsArray)
+
 
 arrLen = len(wordsArray)
 for i in range (arrLen):
     wordsArray[i] = wordSpliter.splitByEquals(wordsArray[i])
+wordsArray = arrayFlattener(wordsArray)
 
-print (wordsArray)
+
+
+arrLen = len(wordsArray)
+for i in range (arrLen):
+    wordsArray[i] = wordSpliter.splitByColon(wordsArray[i])
+wordsArray = arrayFlattener(wordsArray)
+
+
+arrLen = len(wordsArray)
+for i in range (arrLen):
+    wordsArray[i] = wordSpliter.splitByHash(wordsArray[i])
+wordsArray = arrayFlattener(wordsArray)
+
+
+arrLen = len(wordsArray)
+for i in range (arrLen):
+    wordsArray[i] = wordSpliter.splitBySemiColon(wordsArray[i])
+wordsArray = arrayFlattener(wordsArray)
+
+
 """-----xx-------test output------xx-------"""
 
-print (wordsArray)
-wordsArray = arrayFlattener(wordsArray)
+
 print (wordsArray)
 
 

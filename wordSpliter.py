@@ -3,8 +3,8 @@ def splitBySpace(fileContents):
     words = fileContents.split()
     return words
 
-def splitByN(fileContents):
 
+def splitByN(fileContents):
     words = []
     while fileContents:
         index = fileContents.find (r"\n")
@@ -17,8 +17,7 @@ def splitByN(fileContents):
     return words
 
 
-def splitByEquals(fileContents):
- 
+def splitByEquals(fileContents): 
     words = []
     while fileContents:
         index = fileContents.find ("=")
@@ -30,3 +29,41 @@ def splitByEquals(fileContents):
         fileContents = fileContents[index + 1:]
     return words
 
+
+def splitByColon(fileContents): 
+    words = []
+    while fileContents:
+        index = fileContents.find (":")
+        if index == -1:
+            words.append (fileContents)
+            break
+        words.append (fileContents[:index])
+        words.append (":")
+        fileContents = fileContents[index + 1:]
+    return words
+
+
+def splitByHash(fileContents): 
+    words = []
+    while fileContents:
+        index = fileContents.find ("#")
+        if index == -1:
+            words.append (fileContents)
+            break
+        words.append (fileContents[:index])
+        words.append ("#")
+        fileContents = fileContents[index + 1:]
+    return words    
+
+
+def splitBySemiColon(fileContents): 
+    words = []
+    while fileContents:
+        index = fileContents.find (";")
+        if index == -1:
+            words.append (fileContents)
+            break
+        words.append (fileContents[:index])
+        words.append (";")
+        fileContents = fileContents[index + 1:]
+    return words        
