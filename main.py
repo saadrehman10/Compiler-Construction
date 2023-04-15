@@ -34,7 +34,7 @@ for i in range (arrLen):
     wordsArray[i] = wordSpliter.splitBySpace(wordsArray[i])  
 wordsArray = arrayFlattener(wordsArray)
 
-splitArray = ["=",";",":","#","+","-","*","/","%","(",")","{","}","[","]","|","&"]
+splitArray = ["=",";",":","#","+","-","*","/","%","(",")","{","}","[","]","|","\"","&"]
 
 for i in splitArray:
   arrLen = len(wordsArray)
