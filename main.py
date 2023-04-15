@@ -29,37 +29,19 @@ print("COMPILING")
 fileContentsMain = fileHandler.readFile(fileNameMain01)
 wordsArray = wordSpliter.splitByN(fileContentsMain)
 
-
-
 arrLen = len(wordsArray)
 for i in range (arrLen):
     wordsArray[i] = wordSpliter.splitBySpace(wordsArray[i])  
 wordsArray = arrayFlattener(wordsArray)
 
+splitArray = ["=",";",":","#","+","-","*","/","%","(",")","{","}","[","]","|","&"]
 
-
-arrLen = len(wordsArray)
-for i in range (arrLen):
-    wordsArray[i] = wordSpliter.splitBy(wordsArray[i],"=")
-wordsArray = arrayFlattener(wordsArray)
-
-
-arrLen = len(wordsArray)
-for i in range (arrLen):
-    wordsArray[i] = wordSpliter.splitBy(wordsArray[i],":")
-wordsArray = arrayFlattener(wordsArray)
-
-
-arrLen = len(wordsArray)
-for i in range (arrLen):
-    wordsArray[i] = wordSpliter.splitBy(wordsArray[i],"#")
-wordsArray = arrayFlattener(wordsArray)
-
-
-arrLen = len(wordsArray)
-for i in range (arrLen):
-    wordsArray[i] = wordSpliter.splitBy(wordsArray[i],";")
-wordsArray = arrayFlattener(wordsArray)
+for i in splitArray:
+  arrLen = len(wordsArray)
+  for j in range (arrLen):
+      wordsArray[j] = wordSpliter.splitBy(wordsArray[j],i)
+  wordsArray = arrayFlattener(wordsArray)
+    
 
 
 """-----xx-------test output------xx-------"""
