@@ -17,53 +17,15 @@ def splitByN(fileContents):
     return words
 
 
-def splitByEquals(fileContents): 
+def splitBy(fileContents,splitString): 
     words = []
     while fileContents:
-        index = fileContents.find ("=")
+        index = fileContents.find (splitString)
         if index == -1:
             words.append (fileContents)
             break
         words.append (fileContents[:index])
-        words.append ("=")
+        words.append (splitString)
         fileContents = fileContents[index + 1:]
     return words
 
-
-def splitByColon(fileContents): 
-    words = []
-    while fileContents:
-        index = fileContents.find (":")
-        if index == -1:
-            words.append (fileContents)
-            break
-        words.append (fileContents[:index])
-        words.append (":")
-        fileContents = fileContents[index + 1:]
-    return words
-
-
-def splitByHash(fileContents): 
-    words = []
-    while fileContents:
-        index = fileContents.find ("#")
-        if index == -1:
-            words.append (fileContents)
-            break
-        words.append (fileContents[:index])
-        words.append ("#")
-        fileContents = fileContents[index + 1:]
-    return words    
-
-
-def splitBySemiColon(fileContents): 
-    words = []
-    while fileContents:
-        index = fileContents.find (";")
-        if index == -1:
-            words.append (fileContents)
-            break
-        words.append (fileContents[:index])
-        words.append (";")
-        fileContents = fileContents[index + 1:]
-    return words        

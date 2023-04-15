@@ -40,26 +40,25 @@ wordsArray = arrayFlattener(wordsArray)
 
 arrLen = len(wordsArray)
 for i in range (arrLen):
-    wordsArray[i] = wordSpliter.splitByEquals(wordsArray[i])
-wordsArray = arrayFlattener(wordsArray)
-
-
-
-arrLen = len(wordsArray)
-for i in range (arrLen):
-    wordsArray[i] = wordSpliter.splitByColon(wordsArray[i])
+    wordsArray[i] = wordSpliter.splitBy(wordsArray[i],"=")
 wordsArray = arrayFlattener(wordsArray)
 
 
 arrLen = len(wordsArray)
 for i in range (arrLen):
-    wordsArray[i] = wordSpliter.splitByHash(wordsArray[i])
+    wordsArray[i] = wordSpliter.splitBy(wordsArray[i],":")
 wordsArray = arrayFlattener(wordsArray)
 
 
 arrLen = len(wordsArray)
 for i in range (arrLen):
-    wordsArray[i] = wordSpliter.splitBySemiColon(wordsArray[i])
+    wordsArray[i] = wordSpliter.splitBy(wordsArray[i],"#")
+wordsArray = arrayFlattener(wordsArray)
+
+
+arrLen = len(wordsArray)
+for i in range (arrLen):
+    wordsArray[i] = wordSpliter.splitBy(wordsArray[i],";")
 wordsArray = arrayFlattener(wordsArray)
 
 
