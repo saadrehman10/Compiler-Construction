@@ -1,6 +1,6 @@
 import fileHandler
 import wordSpliter
-
+import identifier
 
 """-----xx-----------xx-----------xx------FUNCTIONS FOR MAIN-----xx-----------xx-----------xx-----------xx------"""
 
@@ -43,10 +43,15 @@ for i in splitArray:
   wordsArray = arrayFlattener(wordsArray)
     
 
+"""------xx------IDENTIFIER-----xx-------"""
+
+
+
 
 """-----xx-------test output------xx-------"""
 
 
 print (wordsArray)
+print(identifier.isKeyword(True))
 
 

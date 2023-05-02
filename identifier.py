@@ -1,76 +1,51 @@
-import fileHandler
-# ============= Function that check it is string or not =================
-def is_string(input_val):
-    """
-    Checks if the input is a string.
-
-    Parameters:
-    input_val (any): The input to check.
-
-    Returns:
-    bool: True if the input is a string, False otherwise.
-    """
+import re as regex
 
 
-# ============= Function that check it is integer or not =================
-def is_integer(input_val):
-    """
-    Checks if the input is an integer.
+def isInteger(element):
+    if isinstance(element, int):
+        return True
+    elif isinstance(element, str):
+        pattern = r"^[0-9]$"
+        return bool(regex.match(pattern, element))
+    else:
+        return False
+    
 
-    Parameters:
-    input_val (any): The input to check.
+def isString(element):
+    if isinstance(element, str):
+        return True
+    elif isinstance(element, str):
+        pattern = r"^([a-z0-9A-Z]{5,})$"
+        return bool(regex.match(pattern, element))
+    else:
+        return False
+    
 
-    Returns:
-    bool: True if the input is an integer, False otherwise.
-    """
-    return isinstance(input_val, int)
+def isCharacter(element):
+    if isinstance(element, str):
+        pattern = r"^[a-zA-Z]$"
+        return bool(regex.match(pattern, element))
+    else:
+        return False
+    
 
-
-# ============= Function that check it is Character or not =================
-def is_character(input_val):
-    """
-    Checks if the input is a single character.
-
-    Parameters:
-    input_val (any): The input to check.
-
-    Returns:
-    bool: True if the input is a single character, False otherwise.
-    """
-    return isinstance(input_val, str) and len(input_val) == 1
-
-
-
-# ============= Function that check it is Boolean or not =================
-def is_boolean(input_val):
-    """
-    Checks if the input is a boolean.
-
-    Parameters:
-    input_val (any): The input to check.
-
-    Returns:
-    bool: True if the input is a boolean, False otherwise.
-    """
-    return isinstance(input_val, bool)
+def isBoolean(element):
+    if isinstance(element, bool):
+        return True
+    elif isinstance(element, str):
+        pattern = r"^(True|False)$"
+        return bool(regex.match(pattern, element))
+    else:
+        return False
 
 
+keyword = ['if','in']
 
-
-# ================ Function that check keyword ================
-def is_in_array(input_val, array):
-    """
-    Checks if the input is present in the array.
-
-    Parameters:
-    input_val (any): The input to check.
-    array (list): The array to search.
-
-    Returns:
-    bool: True if the input is present in the array, False otherwise.
-    """
-    return input_val in array
-
+def isKeyword(element):
+    if element in keyword:
+        return "Given Element is Keyword"
+    else:
+        return "Given Element is not a Keyword"
 
 
 
