@@ -5,7 +5,7 @@ def isKeyword(element):
         'for', 'in',  'break', 'continue',
         'return', 'import', 'from',  'global', 
         'pass', 'try', 'except',  'with',  
-        'None']
+        'None','render']
     if element in keyword:
         return True
     else:
