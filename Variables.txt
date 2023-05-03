@@ -1,0 +1,16 @@
+
+
+int i;
+int i = 0;
+
+
+str i;
+str i = 0;
+
+
+float i;
+float i = 0;
+
+
+chr i;
+chr i = 0;
