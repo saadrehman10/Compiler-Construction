@@ -2,7 +2,7 @@ import re as regex
 
 def isKeyword(element):
     keyword = ['if', 'else', 'elif', 'while',
-        'for', 'stop', 'continue','return', 'imp'
+        'for', 'stop', 'pass','return', 'carryon'
         'bprint','render','action','pub','take','package'
         'pvt','lock','unlock','char','int','float','str']
     if element in keyword:
