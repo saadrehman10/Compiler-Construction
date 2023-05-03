@@ -1,6 +1,6 @@
-import fileHandler
-import wordSpliter
-import identifier
+import fileHandler as fh
+import wordSpliter as ws
+import identifier as id 
 
 """-----xx-----------xx-----------xx------FUNCTIONS FOR MAIN-----xx-----------xx-----------xx-----------xx------"""
 
@@ -16,42 +16,56 @@ def arrayFlattener(array):
 """-----xx-----------xx-----------xx-----------xx------MAIN-----xx-----------xx-----------xx-----------xx------"""
 
 codeLines = int(input("Enter the no of Lines you need: "))-1
-userCode = str(input("Enter your code: \n1. ")+r"\n")
+userCode = str(input("Enter your code: \n1. ")+" "+r"\n"+" ")
 fileNameMain01 = "usercode.txt"
-fileHandler.createFile(fileNameMain01,userCode )
+fh.createFile(fileNameMain01,userCode )
 for i in range(codeLines):
     var01 = input(str(i+2)+". ")
-    fileHandler.appendFile(fileNameMain01,var01+r"\n")
+    fh.appendFile(fileNameMain01,var01+" "+r"\n"+" ")
 
 print("COMPILING")
 
 """------xx------WORD SPLITTER-----xx-------"""
-fileContentsMain = fileHandler.readFile(fileNameMain01)
-wordsArray = wordSpliter.splitByN(fileContentsMain)
+fileContentsMain = fh.readFile(fileNameMain01)
+wordsArray = ws.splitByN(fileContentsMain)
 
-arrLen = len(wordsArray)
-for i in range (arrLen):
-    wordsArray[i] = wordSpliter.splitBySpace(wordsArray[i])  
+
+for i in range (len(wordsArray)):
+    wordsArray[i] = ws.splitBySpace(wordsArray[i])  
 wordsArray = arrayFlattener(wordsArray)
 
 splitArray = ["=",";",":","#","+","-","*","/","%","(",")","{","}","[","]","|","\"","'","^","!","&","<",">","?"," "]
 
 for i in splitArray:
-  arrLen = len(wordsArray)
-  for j in range (arrLen):
-      wordsArray[j] = wordSpliter.splitBy(wordsArray[j],i)
+  for j in range (len(wordsArray)):
+      wordsArray[j] = ws.splitBy(wordsArray[j],i)
   wordsArray = arrayFlattener(wordsArray)
+
+print (wordsArray)
+
+"""------xx------id-----xx-------"""
+#order matter for this part
+
+for i in range (len(wordsArray)):
     
-
-"""------xx------IDENTIFIER-----xx-------"""
-
-
+    if id.isInteger(wordsArray[i]):
+        wordsArray[i] = "Integer"     
+    elif id.isBoolean(wordsArray[i]):
+        wordsArray[i] = "Boolean"
+    elif id.isKeyword(wordsArray[i]):
+       wordsArray[i] = "Keyword" 
+    elif id.isCharacter(wordsArray[i]):
+        wordsArray[i] = "Character"     
+    elif id.isString(wordsArray[i]):
+       wordsArray[i] = "String"           
+    else:
+        wordsArray[i] = "Error"
 
 
 """-----xx-------test output------xx-------"""
 
 
 print (wordsArray)
-print(identifier.isKeyword(True))
+
 
 

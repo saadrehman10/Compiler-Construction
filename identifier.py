@@ -1,6 +1,5 @@
 import re as regex
 
-
 def isInteger(element):
     if isinstance(element, int):
         return True
@@ -33,20 +32,22 @@ def isBoolean(element):
     if isinstance(element, bool):
         return True
     elif isinstance(element, str):
-        pattern = r"^(True|False)$"
+        pattern = r"^(True|False|true|false)$"
         return bool(regex.match(pattern, element))
     else:
         return False
 
 
-keyword = ['if','in']
+keyword = ['if', 'else', 'elif', 'while',
+            'for', 'in',  'break', 'continue',
+            'return', 'import', 'from',  'global', 
+            'pass', 'try', 'except',  'with',  
+           'None']
+
 
 def isKeyword(element):
     if element in keyword:
-        return "Given Element is Keyword"
+        return True
     else:
-        return "Given Element is not a Keyword"
-
-
-
+        return False
 

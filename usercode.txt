@@ -1,1 +1,1 @@
-if(s==3;s>4;s++){\n   print("hello World")\n   print(3+4%6)\n   :}\n\n
+saad true false False if True qwee w e 2 1 2 121 12 10  \n else call \n true \n 
