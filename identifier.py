@@ -2,10 +2,9 @@ import re as regex
 
 def isKeyword(element):
     keyword = ['if', 'else', 'elif', 'while',
-        'for', 'in',  'break', 'continue',
-        'return', 'import', 'from',  'global', 
-        'pass', 'try', 'except',  'with',  
-        'None']
+        'for', 'stop', 'continue','return', 'imp'
+        'bprint','render','action','pub','take','package'
+        'pvt','lock','unlock','char','int','float','str']
     if element in keyword:
         return True
     else:
@@ -35,10 +34,18 @@ def isBoolean(element):
 def isFloat(element):
         pattern = r"(^[0-9]+[0-9]|^[0-9])+(\.[0-9]+[0-9]$|\.[0-9])$"
         return bool(regex.match(pattern, element))
+
+def isTerminator(element):
+        pattern = r"^[\:]|[\;]|[\#]|[\#+\#]$"
+        return bool(regex.match(pattern, element))
+
+def isPunctuator(element):
+        pattern = r"^[\[]|[\]]|[\{]|[\}]|[\(]|[\)]|[\']|[\"]|[\?]|[\,] $"
+        return bool(regex.match(pattern, element))
     
 
 def isOperator(element):
-        pattern = r"^[\+]|[\-]|[\/]|[\*]|[\%]|[\^]|[\/+\/]$"
+        pattern = r"^[\+]|[\-]|[\/]|[\*]|[\%]|[\^]|[\/+\/]||[\++\+]|[\-+\-]$"
         return bool(regex.match(pattern, element))
 
 
@@ -46,4 +53,10 @@ def isComparator(element):
         pattern = r"^[\<]|[\>]|[\=+\<]|[\=+\>]|[\=+\=]|[\=+\=+\=]|[\!+\=]$"
         return bool(regex.match(pattern, element))
 
+def isAssignmentOperators(element):
+        pattern = r"^[\=]|[\++\=]|[\-+\=]|[\*+\=]|[\/+\=]|[\%+\=]|[\&+\=]|[\<+\<+\=]|[\>+\>+\=]$"
+        return bool(regex.match(pattern, element))
 
+def isLogocalOperators(element):
+        pattern = r"^[\&]|[\|]|[\^+\|]$"
+        return bool(regex.match(pattern, element))

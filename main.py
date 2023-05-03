@@ -53,7 +53,12 @@ for i in range (len(wordsArray)):
     elif id.isFloat(wordsArray[i]):
         wordsArray[i] = "Float"   
     elif id.isOperator(wordsArray[i]):
-        wordsArray[i] = "Operator"         
+        wordsArray[i] = "Operator"   
+    elif id.isComparator(wordsArray[i]):
+        wordsArray[i] = "Comparator" 
+    elif id.isAssignmentOperators(wordsArray[i]):
+        wordsArray[i] = "Assignment-Operators"     
+
     elif id.isBoolean(wordsArray[i]):
         wordsArray[i] = "Boolean"
     elif id.isKeyword(wordsArray[i]):
