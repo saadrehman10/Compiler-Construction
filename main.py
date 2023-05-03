@@ -49,7 +49,11 @@ print (wordsArray)
 for i in range (len(wordsArray)):
     
     if id.isInteger(wordsArray[i]):
-        wordsArray[i] = "Integer"     
+        wordsArray[i] = "Integer" 
+    elif id.isFloat(wordsArray[i]):
+        wordsArray[i] = "Float"   
+    elif id.isOperator(wordsArray[i]):
+        wordsArray[i] = "Operator"         
     elif id.isBoolean(wordsArray[i]):
         wordsArray[i] = "Boolean"
     elif id.isKeyword(wordsArray[i]):
