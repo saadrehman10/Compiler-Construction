@@ -1,16 +1,20 @@
 
 
 int i;
+int i = take{"Enter Your Input"};
 int i = 0;
 
 
 str i;
+str i = take{"Enter Your Input"};
 str i = 0;
 
 
 float i;
+float i = take{"Enter Your Input"};
 float i = 0;
 
 
 chr i;
+chr i = take{"Enter Your Input"};
 chr i = 0;
