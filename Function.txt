@@ -1,0 +1,4 @@
+Action test():
+
+    render("Hello World")
+:

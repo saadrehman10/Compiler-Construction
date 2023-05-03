@@ -1,0 +1,11 @@
+// ==================== PUBLIC MODIFIER ==================================
+Pub variabeName;   // variable declaration
+Pub variabeName= "1";   // variable Inilization
+
+// ==================== PRIVATE MODIFIER ==================================
+Pvt variabeName;   // variable declaration
+Pvt variabeName= "1";   // variable Inilization
+
+// ==================== PROTECTED MODIFIER ==================================
+lock variabeName;   // variable declaration
+lock variabeName= "1";   // variable Inilization
