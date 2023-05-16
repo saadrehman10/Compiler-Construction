@@ -15,17 +15,18 @@ def arrayFlattener(array):
 
 """-----xx-----------xx-----------xx-----------xx------MAIN-----xx-----------xx-----------xx-----------xx------"""
 
-codeLines = int(input("Enter the no of Lines you need: "))-1
-userCode = str(input("Enter your code: \n1. ")+" "+r"\n"+" ")
+codeLines = int(input("Enter the no of Lines you need: "))
+userCode = str(input("Enter your code: \n1. "))
 fileNameMain01 = "usercode.txt"
 fh.createFile(fileNameMain01,userCode )
 for i in range(codeLines):
     var01 = input(str(i+2)+". ")
-    fh.appendFile(fileNameMain01,var01+" "+r"\n"+" ")
+    fh.appendFile(fileNameMain01,var01)
 
 print("COMPILING")
 
 """------xx------WORD SPLITTER-----xx-------"""
+
 fileContentsMain = fh.readFile(fileNameMain01)
 wordsArray = ws.splitByN(fileContentsMain)
 

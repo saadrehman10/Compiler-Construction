@@ -1,1 +1,2 @@
- take if else helloo saad  === = ==+++++++-------09090 0909 0 9.8  \n [][]][][][';'';';;;';'..,<><>/ \n  \n  \n 
+for i in range(0,4)
+    print(i)
