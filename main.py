@@ -46,6 +46,15 @@ print (wordsArray)
 concatArray= ["=","+","-","#","/"]
 for i in concatArray:
   wordsArray = ws.arrayConcatenationSame(wordsArray,i)
+
+
+wordsArray = ws.arrayConcatenationOdd(wordsArray,"+","=")
+wordsArray = ws.arrayConcatenationOdd(wordsArray,"-","=")
+wordsArray = ws.arrayConcatenationOdd(wordsArray,"*","=")
+wordsArray = ws.arrayConcatenationOdd(wordsArray,"/","=")        
+wordsArray = ws.arrayConcatenationOdd(wordsArray,"!","=")  
+wordsArray = ws.arrayConcatenationOdd(wordsArray,"<","=")  
+wordsArray = ws.arrayConcatenationOdd(wordsArray,">","=")  
 print (wordsArray)
 """------xx------id-----xx-------"""
 #order matter for this part
@@ -69,8 +78,7 @@ for i in range (len(wordsArray)):
     elif id.isCharacter(wordsArray[i]):
         wordsArray[i] = "Character"     
     elif id.isString(wordsArray[i]):
-       wordsArray[i] = "String"   
-                  
+       wordsArray[i] = "String"                
     else:
         wordsArray[i] = "Error"
 

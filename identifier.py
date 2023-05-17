@@ -41,7 +41,7 @@ def isTerminator(element):
         return bool(regex.match(pattern, element))
 
 def isPunctuator(element):
-        pattern = r"^[\[]|[\]]|[\{]|[\}]|[\(]|[\)]|[\']|[\"]|[\?]|[\,] $"
+        pattern = r"^\[|\]|\{|\}|\(|\)|\'|\"|\?|\, $"
         return bool(regex.match(pattern, element))
     
 
@@ -51,11 +51,11 @@ def isOperator(element):
 
 
 def isComparator(element):
-        pattern = r"^\<|\>|\=+\<|\=+\>|\=+\=|\=+\=+\=|\!+\=$"
+        pattern = r"^\<|\>|\=+\<|\=+\>|\=+\=|\!+\=$"
         return bool(regex.match(pattern, element))
 
 def isAssignmentOperators(element):
-        pattern = r"^\=|\++\=|\-+\=|\*+\=|\/+\=|\%+\=|\&+\=|\<+\<+\=|\>+\>+\=$"
+        pattern = r"^\=|\++\=|\-+\=|\*+\=|\/+\=|\%+\=$"
         return bool(regex.match(pattern, element))
 
 def isLogocalOperators(element):
