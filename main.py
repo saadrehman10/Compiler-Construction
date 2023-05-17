@@ -55,7 +55,9 @@ wordsArray = ws.arrayConcatenationOdd(wordsArray,"/","=")
 wordsArray = ws.arrayConcatenationOdd(wordsArray,"!","=")  
 wordsArray = ws.arrayConcatenationOdd(wordsArray,"<","=")  
 wordsArray = ws.arrayConcatenationOdd(wordsArray,">","=")  
+wordsArray = ws.arrayConcatenationOdd(wordsArray,"^","|") 
 print (wordsArray)
+
 """------xx------id-----xx-------"""
 #order matter for this part
 
@@ -70,7 +72,13 @@ for i in range (len(wordsArray)):
     elif id.isComparator(wordsArray[i]):
         wordsArray[i] = "Comparator"  
     elif id.isAssignmentOperators(wordsArray[i]):
-        wordsArray[i] = "Assignment-Operators"     
+        wordsArray[i] = "Assignment-Operators"  
+    elif id.isLogocalOperators(wordsArray[i]):
+        wordsArray[i] = "Logical-Operators"
+    elif id.isTerminator(wordsArray[i]):
+       wordsArray[i] = "Terminator"  
+    elif id.isPunctuator(wordsArray[i]):  
+       wordsArray[i] = "Punctuator"             
     elif id.isBoolean(wordsArray[i]):
         wordsArray[i] = "Boolean"
     elif id.isKeyword(wordsArray[i]):

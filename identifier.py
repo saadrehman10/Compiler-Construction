@@ -37,11 +37,11 @@ def isFloat(element):
         return bool(regex.match(pattern, element))
 
 def isTerminator(element):
-        pattern = r"^\:|\;|\#|[\#+\#]$"
+        pattern = r"^\:|\;|\#|\#+\#$"
         return bool(regex.match(pattern, element))
 
 def isPunctuator(element):
-        pattern = r"^\[|\]|\{|\}|\(|\)|\'|\"|\?|\, $"
+        pattern = r"^\[|\]|\{|\}|\(|\)|\'|\"|\?|\,$"
         return bool(regex.match(pattern, element))
     
 
@@ -59,5 +59,5 @@ def isAssignmentOperators(element):
         return bool(regex.match(pattern, element))
 
 def isLogocalOperators(element):
-        pattern = r"^[\&]|[\|]|[\^+\|]$"
+        pattern = r"^\&|\||\^+\|$"
         return bool(regex.match(pattern, element))
