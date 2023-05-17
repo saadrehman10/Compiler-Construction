@@ -15,7 +15,7 @@ def arrayFlattener(array):
 
 """-----xx-----------xx-----------xx-----------xx------MAIN-----xx-----------xx-----------xx-----------xx------"""
 
-codeLines = int(input("Enter the no of Lines you need: "))
+""" codeLines = int(input("Enter the no of Lines you need: "))
 userCode = str(input("Enter your code: \n1. "))
 fileNameMain01 = "usercode.txt"
 fh.createFile(fileNameMain01,userCode )
@@ -24,9 +24,9 @@ for i in range(codeLines):
     fh.appendFile(fileNameMain01,var01)
 
 print("COMPILING")
-
+ """
 """------xx------WORD SPLITTER-----xx-------"""
-
+fileNameMain01 = "usercode.txt"
 fileContentsMain = fh.readFile(fileNameMain01)
 wordsArray = ws.splitByN(fileContentsMain)
 
@@ -35,7 +35,7 @@ for i in range (len(wordsArray)):
     wordsArray[i] = ws.splitBySpace(wordsArray[i])  
 wordsArray = arrayFlattener(wordsArray)
 
-splitArray = ["=",";",":","#","+","-","*","/","%","(",")","{","}","[","]","|","\"","'","^","!","&","<",">","?"," "]
+splitArray = ["=",";",":","#","+","-","*","/","%","(",")","{","}","[","]","|","\"","'","^","!","&","<",">","?","\n"," "]
 
 for i in splitArray:
   for j in range (len(wordsArray)):
@@ -43,7 +43,10 @@ for i in splitArray:
   wordsArray = arrayFlattener(wordsArray)
 
 print (wordsArray)
-
+concatArray= ["=","+","-","#","/"]
+for i in concatArray:
+  wordsArray = ws.arrayConcatenationSame(wordsArray,i)
+print (wordsArray)
 """------xx------id-----xx-------"""
 #order matter for this part
 

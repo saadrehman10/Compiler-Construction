@@ -1,15 +1,19 @@
+def arrayConcatenation(array):
+    index1 = 0
+    index2 = 1
+    for i in range(len(array)):
+        if index2 >= len(array): 
+            break  
+        if array[index1] == "=" and array[index2] == "=":
+            hold = array[index1] + array[index2]
+            array[index1] = hold
+            array.pop(index2)
+        else:  
+            index1 += 1
+            index2 += 1
 
-character = []
+    return array
 
-# Read file
-with open('usercode.txt','r') as f:
-    content = f.read()
+arr = ["=", "=", "+", "=", "=", "+", ">", "="]
+print(arrayConcatenation(arr))
 
-    for i in range(0,len(content)):
-        if content[i] == ' ':
-            pass
-        else:
-            character.append(content[i])
-    # print(content)
-
-print(character)
