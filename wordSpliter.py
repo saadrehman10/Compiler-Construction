@@ -50,6 +50,7 @@ def arrayConcatenationSame(array,operater):
 def arrayConcatenationOdd(array,operater01,operater02):
     index1 = 0
     index2 = 1
+    
     for i in range(len(array)):
         if index2 >= len(array): 
             break  
@@ -64,17 +65,20 @@ def arrayConcatenationOdd(array,operater01,operater02):
     return array
 
 def commentChecker(array):
-     
-     commentIndexs = []
-     for i in range(len(array)):
-            if array[i] == "##":
-                commentIndexs.append(i)
+    while "##" in array:
+        commentIndices = [i for i, elem in enumerate(array) if elem == "##"]
+        if len(commentIndices) < 2:
+            break
+        index1 = commentIndices[0]
+        index2 = commentIndices[1] + 1
+        array = array[:index1] + array[index2:]
 
-     for j in range (len(commentIndexs)):
-        sclicedOut01 = array[0:commentIndexs[j]] 
-        sclicedOut02 = array[commentIndexs[j]+1:len(array)]  
-        array = sclicedOut01 + sclicedOut02
-     return array
-           
+    return array
+
+def commaStringChecker(array):
+    while "\"" in array|"\'" in array:
+        commentIndices1 = [i for i, elem in enumerate(array) if elem == "\""]
+        commentIndices2 = [i for i, elem in enumerate(array) if elem == "\'"]
+                  
 
                 

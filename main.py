@@ -35,7 +35,8 @@ for i in range (len(wordsArray)):
     wordsArray[i] = ws.splitBySpace(wordsArray[i])  
 wordsArray = arrayFlattener(wordsArray)
 
-splitArray = ["=",";",":","#","+","-","*","/","%","(",")","{","}","[","]","|","\"","'","^","!","&","<",">","?","\n"," "]
+splitArray = ["=",";",":","#","+","-","*","/","%","(",")","{","}","[","]",
+              "|","\"","'","^","!","&","<",">","?"," "]
 
 for i in splitArray:
   for j in range (len(wordsArray)):
@@ -56,12 +57,10 @@ wordsArray = ws.arrayConcatenationOdd(wordsArray,"!","=")
 wordsArray = ws.arrayConcatenationOdd(wordsArray,"<","=")  
 wordsArray = ws.arrayConcatenationOdd(wordsArray,">","=")  
 wordsArray = ws.arrayConcatenationOdd(wordsArray,"^","|") 
+wordsArray = ws.commentChecker(wordsArray)
 print(wordsArray)
-
-newtamporayarray = ws.commentChecker(wordsArray)
-print(newtamporayarray)
 """------xx------id-----xx-------"""
-""" #order matter for this part
+#order matter for this part
 tokenArray = []
 for i in range (len(wordsArray)):
     
@@ -93,10 +92,10 @@ for i in range (len(wordsArray)):
         tokenArray.append("Error") 
 
 
------xx-------test output------xx-------
+""" -----xx-------test output------xx------- """
 
 
-print (tokenArray) """
+print (tokenArray)
 
 
 
