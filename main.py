@@ -59,6 +59,8 @@ wordsArray = ws.arrayConcatenationOdd(wordsArray,">","=")
 wordsArray = ws.arrayConcatenationOdd(wordsArray,"^","|") 
 wordsArray = ws.commentChecker(wordsArray)
 print(wordsArray)
+tempor = ws.commaStringChecker(wordsArray)
+print(tempor)
 """------xx------id-----xx-------"""
 #order matter for this part
 tokenArray = []

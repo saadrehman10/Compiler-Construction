@@ -76,9 +76,15 @@ def commentChecker(array):
     return array
 
 def commaStringChecker(array):
-    while "\"" in array|"\'" in array:
+    while "\"" in array or "\'" in array:
         commentIndices1 = [i for i, elem in enumerate(array) if elem == "\""]
         commentIndices2 = [i for i, elem in enumerate(array) if elem == "\'"]
-                  
-
-                
+        if len(commentIndices1) < 2 or len(commentIndices2) < 2:
+            break
+        index1 = commentIndices1[0]
+        index2 = commentIndices1[1] + 1   
+        strArray = array[index1:index2]
+        strArray= " ".join(strArray)
+        
+        break     
+    print(strArray)   
