@@ -62,3 +62,19 @@ def arrayConcatenationOdd(array,operater01,operater02):
             index2 += 1
 
     return array
+
+def commentChecker(array):
+     
+     commentIndexs = []
+     for i in range(len(array)):
+            if array[i] == "##":
+                commentIndexs.append(i)
+
+     for j in range (len(commentIndexs)):
+        sclicedOut01 = array[0:commentIndexs[j]] 
+        sclicedOut02 = array[commentIndexs[j]+1:len(array)]  
+        array = sclicedOut01 + sclicedOut02
+     return array
+           
+
+                

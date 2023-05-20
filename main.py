@@ -42,7 +42,7 @@ for i in splitArray:
       wordsArray[j] = ws.splitBy(wordsArray[j],i)
   wordsArray = arrayFlattener(wordsArray)
 
-print (wordsArray)
+
 concatArray= ["=","+","-","#","/"]
 for i in concatArray:
   wordsArray = ws.arrayConcatenationSame(wordsArray,i)
@@ -56,45 +56,47 @@ wordsArray = ws.arrayConcatenationOdd(wordsArray,"!","=")
 wordsArray = ws.arrayConcatenationOdd(wordsArray,"<","=")  
 wordsArray = ws.arrayConcatenationOdd(wordsArray,">","=")  
 wordsArray = ws.arrayConcatenationOdd(wordsArray,"^","|") 
-print (wordsArray)
+print(wordsArray)
 
+newtamporayarray = ws.commentChecker(wordsArray)
+print(newtamporayarray)
 """------xx------id-----xx-------"""
-#order matter for this part
-
+""" #order matter for this part
+tokenArray = []
 for i in range (len(wordsArray)):
     
     if id.isInteger(wordsArray[i]):
-        wordsArray[i] = "Integer" 
+        tokenArray.append("Integer")  
     elif id.isFloat(wordsArray[i]):
-        wordsArray[i] = "Float"    
+        tokenArray.append("Float")     
     elif id.isOperator(wordsArray[i]):
-        wordsArray[i] = "Operator"  
+        tokenArray.append("Operator")  
     elif id.isComparator(wordsArray[i]):
-        wordsArray[i] = "Comparator"  
+       tokenArray.append("Comparator") 
     elif id.isAssignmentOperators(wordsArray[i]):
-        wordsArray[i] = "Assignment-Operators"  
+        tokenArray.append("Assignment-Operators") 
     elif id.isLogocalOperators(wordsArray[i]):
-        wordsArray[i] = "Logical-Operators"
+        tokenArray.append("Logical-Operators") 
     elif id.isTerminator(wordsArray[i]):
-       wordsArray[i] = "Terminator"  
+       tokenArray.append("Terminator")
     elif id.isPunctuator(wordsArray[i]):  
-       wordsArray[i] = "Punctuator"             
+       tokenArray.append("Punctuator")             
     elif id.isBoolean(wordsArray[i]):
-        wordsArray[i] = "Boolean"
+        tokenArray.append("Boolean") 
     elif id.isKeyword(wordsArray[i]):
-       wordsArray[i] = "Keyword" 
+       tokenArray.append("Keyword") 
     elif id.isCharacter(wordsArray[i]):
-        wordsArray[i] = "Character"     
+       tokenArray.append("Character")   
     elif id.isString(wordsArray[i]):
-       wordsArray[i] = "String"                
+       tokenArray.append("String")                 
     else:
-        wordsArray[i] = "Error"
+        tokenArray.append("Error") 
 
 
-"""-----xx-------test output------xx-------"""
+-----xx-------test output------xx-------
 
 
-print (wordsArray)
+print (tokenArray) """
 
 
 
