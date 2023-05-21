@@ -4,7 +4,7 @@ def isKeyword(element):
     keyword = ['if', 'else', 'elif', 'while',
         'for', 'stop', 'pass','return', 'carryon'
         'bprint','render','action','pub','take','package'
-        'pvt','lock','unlock','char','int','float','str']
+        'pvt','lock','unlock','char','int','float','str','interface', 'while','string','bprint','action','return']
 
     if element in keyword:
         return True
@@ -13,6 +13,7 @@ def isKeyword(element):
     
 
 def isInteger(element):
+        
         pattern = r"^[0-9]+[0-9]$|^[0-9]$"
         return bool(regex.match(pattern, element))
 

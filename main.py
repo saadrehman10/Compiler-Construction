@@ -60,7 +60,7 @@ wordsArray = ws.arrayConcatenationOdd(wordsArray,"^","|")
 wordsArray = ws.commentChecker(wordsArray)
 print(wordsArray)
 tempor = ws.commaStringChecker(wordsArray)
-print(tempor)
+# print(tempor)
 """------xx------id-----xx-------"""
 #order matter for this part
 tokenArray = []
@@ -97,7 +97,7 @@ for i in range (len(wordsArray)):
 """ -----xx-------test output------xx------- """
 
 
-print (tokenArray)
+# print (tokenArray)
 
 
 
