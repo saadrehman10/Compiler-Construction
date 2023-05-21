@@ -1,3 +1,4 @@
+import identifier as id
 """ -----------WORD SPLITER LOGICS------- """
 def splitByN(fileContents):
     word = []
@@ -132,3 +133,26 @@ def is_in_array(input_val, array):
 
 
 """ |[\[]|[\]]|[\{]|[\}]|[\;]|[\(+\)] """
+
+def floatMaker(array):
+    commentIndices = [i for i, elem in enumerate(array) if elem == "."]
+    print(commentIndices)
+    i = 0
+    while i < len(commentIndices):
+        if len(commentIndices) < 2:
+            break
+        index1 = commentIndices[i] - 1
+        index2 = commentIndices[i] + 1
+        if id.isInteger(array[index1]) and id.isInteger(array[index2]):
+            hold = str(array[index1]) + "." + str(array[index2])
+            array[commentIndices[i] - 1] = hold
+            array.pop(commentIndices[i])
+            array.pop(commentIndices[i])
+            commentIndices = [index for index in commentIndices if index > commentIndices[i] + 1]
+        else:
+            i += 1
+
+    return array
+arr = ['interface', ':', ':', 'A_B_C', 'while', '(', 'a', '.', 'b', '.', 'c', '<', '<', '<', '<', '<', '==', '78', '.', '65', 'b', '++', '+=', '56', '.', '75', 'ab', '7', '.', '11', '" abc "', '=', 'b', '=', 'c', 'string', 's', '=', "'", '\\\\\\', "'", '+', "'", '++', "'", 'n', "'", '+=', '35', "'", '\\\\', 'returnÂ', 'a', '&', '&', '==', '@bcee', '3423432']
+
+print(floatMaker(arr))

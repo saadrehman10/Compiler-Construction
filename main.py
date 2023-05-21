@@ -35,7 +35,7 @@ for i in range (len(wordsArray)):
     wordsArray[i] = ws.splitBySpace(wordsArray[i])  
 wordsArray = arrayFlattener(wordsArray)
 
-splitArray = ["=",";",":","#","+","-","*","/","%","(",")","{","}","[","]",
+splitArray = ["=",".",";",":","#","+","-","*","/","%","(",")","{","}","[","]",
               "|","\"","'","^","!","&","<",">","?"," "]
 
 for i in splitArray:
@@ -55,8 +55,13 @@ for i in concatArray2:
 wordsArray = ws.arrayConcatenationOdd(wordsArray,"^","|") 
 wordsArray = ws.commentChecker(wordsArray)
 print(wordsArray)
-tempor = ws.commaStringChecker(wordsArray)
-print(tempor)
+wordsArray = ws.commaStringChecker(wordsArray)
+wordsArray = ws.someThingCheck(wordsArray)
+wordsArray = arrayFlattener(wordsArray)
+print(wordsArray)
+wordsArray = ws.floatMaker(wordsArray)
+
+print(wordsArray)
 
 
 """------xx------id-----xx-------"""
@@ -97,5 +102,6 @@ for i in range (len(wordsArray)):
 
 """ print (tokenArray) """
 
-
+while True:
+  pass
 

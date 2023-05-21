@@ -66,6 +66,3 @@ def isStrOrInt(element):
         pattern = r"^\d+[a-zA-Z].+$"
         return bool(regex.match(pattern, element))
 
-def isFloatCheck(element):
-    pattern = r"^[0-9]+\.[0-9]+$"
-    return bool(regex.match(pattern, element))
