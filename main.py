@@ -48,22 +48,20 @@ concatArray= ["=","+","-","#","/"]
 for i in concatArray:
   wordsArray = ws.arrayConcatenationSame(wordsArray,i)
 
+concatArray2= ["+","-","*","/","!","<",">"]
+for i in concatArray2:
+   wordsArray = ws.arrayConcatenationOdd(wordsArray,i,"=")
 
-wordsArray = ws.arrayConcatenationOdd(wordsArray,"+","=")
-wordsArray = ws.arrayConcatenationOdd(wordsArray,"-","=")
-wordsArray = ws.arrayConcatenationOdd(wordsArray,"*","=")
-wordsArray = ws.arrayConcatenationOdd(wordsArray,"/","=")        
-wordsArray = ws.arrayConcatenationOdd(wordsArray,"!","=")  
-wordsArray = ws.arrayConcatenationOdd(wordsArray,"<","=")  
-wordsArray = ws.arrayConcatenationOdd(wordsArray,">","=")  
 wordsArray = ws.arrayConcatenationOdd(wordsArray,"^","|") 
 wordsArray = ws.commentChecker(wordsArray)
 print(wordsArray)
 tempor = ws.commaStringChecker(wordsArray)
 print(tempor)
+
+
 """------xx------id-----xx-------"""
 #order matter for this part
-tokenArray = []
+""" tokenArray = []
 for i in range (len(wordsArray)):
     
     if id.isInteger(wordsArray[i]):
@@ -91,13 +89,13 @@ for i in range (len(wordsArray)):
     elif id.isString(wordsArray[i]):
        tokenArray.append("String")                 
     else:
-        tokenArray.append("Error") 
+        tokenArray.append("Error")  """
 
 
 """ -----xx-------test output------xx------- """
 
 
-print (tokenArray)
+""" print (tokenArray) """
 
 
 

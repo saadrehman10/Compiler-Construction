@@ -85,6 +85,8 @@ def commaStringChecker(array):
         index2 = commentIndices1[1] + 1   
         strArray = array[index1:index2]
         strArray= " ".join(strArray)
-        
-        break     
-    print(strArray)   
+        array[commentIndices1[0]] = strArray
+        index1+=1
+        index2+=1
+        array = array[:index1] + array[index2:]   
+    return array   
