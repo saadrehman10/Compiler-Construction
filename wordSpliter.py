@@ -1,4 +1,4 @@
-import re
+import re as regex
 import identifier as id
 def splitBySpace(fileContents):
     words = fileContents.split()
@@ -97,32 +97,28 @@ def someThingCheck(array):
     for i in range(len(array)):
         if id.isStrOrInt(array[i]):
             pattern = r"\d+|[a-zA-Z]+"
-            holdArray = re.findall(pattern, array[i])
+            holdArray = regex.findall(pattern, array[i])
             array[i] = holdArray
-            
     return array
+
 
 
 def floatMaker(array):
     commentIndices = [i for i, elem in enumerate(array) if elem == "."]
-    print(commentIndices)
-    i = 0
-    while i < len(commentIndices):
-        if len(commentIndices) < 2:
-            break
-        index1 = commentIndices[i] - 1
-        index2 = commentIndices[i] + 1
-        if id.isInteger(array[index1]) and id.isInteger(array[index2]):
-            hold = str(array[index1]) + "." + str(array[index2])
-            array[commentIndices[i] - 1] = hold
-            array.pop(commentIndices[i])
-            array.pop(commentIndices[i])
-            """ commentIndices = [index for index in commentIndices if index > commentIndices[i] + 1] """
-        else:
-            i += 1
-
+    for i in range (len(commentIndices)):
+        try:
+            commentIndices2 = [i for i, elem in enumerate(array) if elem == "."]
+            index1 = commentIndices2[i] - 1
+            index2 = commentIndices2[i] + 1
+            if id.isInteger(array[index1]) and id.isInteger(array[index2]):
+                hold = array[index1] +"."+ array[index2]
+                array[index1] = hold
+                array.pop(commentIndices2[i])
+                array.pop(commentIndices2[i]) 
+        except Exception as e:
+            array = floatMaker(array)
+                        
     return array
-
 
 
     
