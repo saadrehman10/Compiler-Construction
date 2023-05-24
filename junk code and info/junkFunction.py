@@ -166,3 +166,40 @@ def floatMaker(array):
 
 arr = ['interface', ':', ':', 'A_B_C', 'while', '(', 'a', '.', 'b', '.', 'c', '<', '<', '<', '<', '<', '==', '78', '.', '65', 'b', '++', '+=', '56', '.', '75', 'ab', '7', '.', '11', '" abc "', '=', 'b', '=', 'c', 'string', 's', '=', "'", '\\\\\\', "'", '+', "'", '++', "'", 'n', "'", '+=', '35', "'", '\\\\', 'returnÂ', 'a', '&', '&', '==', '@bcee', '3423432',".","2"]
 print(floatMaker(arr))
+
+#order matter for this part
+""" tokenArray = []
+for i in range (len(wordsArray)):
+    
+    if id.isInteger(wordsArray[i]):
+        tokenArray.append("Integer")  
+    elif id.isFloat(wordsArray[i]):
+        tokenArray.append("Float")     
+    elif id.isOperator(wordsArray[i]):
+        tokenArray.append("Operator")  
+    elif id.isComparator(wordsArray[i]):
+       tokenArray.append("Comparator") 
+    elif id.isAssignmentOperators(wordsArray[i]):
+        tokenArray.append("Assignment-Operators") 
+    elif id.isLogocalOperators(wordsArray[i]):
+        tokenArray.append("Logical-Operators") 
+    elif id.isTerminator(wordsArray[i]):
+       tokenArray.append("Terminator")
+    elif id.isPunctuator(wordsArray[i]):  
+       tokenArray.append("Punctuator")             
+    elif id.isBoolean(wordsArray[i]):
+        tokenArray.append("Boolean") 
+    elif id.isKeyword(wordsArray[i]):
+       tokenArray.append("Keyword") 
+    elif id.isCharacter(wordsArray[i]):
+       tokenArray.append("Character")   
+    elif id.isString(wordsArray[i]):
+       tokenArray.append("String")                 
+    else:
+        tokenArray.append("Error")  """
+
+
+""" -----xx-------test output------xx------- """
+
+
+""" print (tokenArray) """

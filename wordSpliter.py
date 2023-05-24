@@ -13,7 +13,6 @@ def splitByN(fileContents):
             words.append (fileContents)
             break
         words.append (fileContents[:index])
-        words.append ("\n")
         fileContents = fileContents[index + 1:]
     return words
 
@@ -98,12 +97,17 @@ def someThingCheck(array):
         if id.isStrOrInt(array[i]):
             pattern = r"\d+|[a-zA-Z]+"
             holdArray = regex.findall(pattern, array[i])
-            array[i] = holdArray
+            arr = []
+            arr.append(holdArray[0])
+            holdArray = holdArray[1:]
+            temp = "".join(element for element in holdArray)
+            arr.append(temp)
+            array[i] = arr
     return array
 
 
 
-def floatMaker(array):
+def floatMakerType1(array):
     commentIndices = [i for i, elem in enumerate(array) if elem == "."]
     for i in range (len(commentIndices)):
         try:
@@ -114,9 +118,25 @@ def floatMaker(array):
                 hold = array[index1] +"."+ array[index2]
                 array[index1] = hold
                 array.pop(commentIndices2[i])
-                array.pop(commentIndices2[i]) 
+                array.pop(commentIndices2[i])  
         except Exception as e:
-            array = floatMaker(array)
+            array = floatMakerType1(array)
+                        
+    return array
+
+def floatMakerType2(array):
+    commentIndices = [i for i, elem in enumerate(array) if elem == "."]
+    for i in range (len(commentIndices)):
+        try:
+            commentIndices2 = [i for i, elem in enumerate(array) if elem == "."]
+            index1 = commentIndices2[i] 
+            index2 = commentIndices2[i] + 1
+            if array[index1] == "." and id.isInteger(array[index2]):
+                hold = "0" +"."+ array[index2]
+                array[index1] = hold
+                array.pop(commentIndices2[i]+1)
+        except Exception as e:
+            array = floatMakerType2(array)
                         
     return array
 
