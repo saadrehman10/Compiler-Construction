@@ -12,7 +12,7 @@ def isKeyword(element):
     else:
         return False
     
-
+# sara true ya false return kar raha ha
 def isInteger(element):
         pattern = r"^[0-9]+[0-9]$|^[0-9]$"
         return bool(regex.match(pattern, element))

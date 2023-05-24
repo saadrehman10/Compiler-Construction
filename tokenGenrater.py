@@ -3,8 +3,7 @@ import identifier as id
 
 def tokenGen(words, line_number):
     tokenArray = []
-    if words == "n":
-        line_number += 1
+    if words == "n":# ya wahi new line ka lia ha jo wordSpliter.py ma ha error ha set kar na ha
         return line_number
     else:    
         if id.isInteger(words):
