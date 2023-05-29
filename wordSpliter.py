@@ -96,7 +96,7 @@ def commaStringChecker(array):
     return array# array ko return kar raha ha
 
 
-def someThingCheck(array):# ya checck kar ta ha 77723324jhkhkj32234 is type ka string ko 77723324 jhkhkj 32234 is type ma split kar ta ha
+def alphaNumeric(array):# ya checck kar ta ha 77723324jhkhkj32234 is type ka string ko 77723324 jhkhkj 32234 is type ma split kar ta ha
                           # 77777 ya phala ana wala integer ko seprate kar ta ha or baki ka array ko concatinate kar ta ha
     for i in range(len(array)):
         if id.isStrOrInt(array[i]):

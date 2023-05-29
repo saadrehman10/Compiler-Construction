@@ -44,15 +44,22 @@ for i in splitArray:
 concatArray= ["=","+","-","#","/"]
 for i in concatArray:
   wordsArray = ws.arrayConcatenationSame(wordsArray,i)
+
 concatArray2= ["+","-","*","/","!","<",">"]
 for i in concatArray2:
    wordsArray = ws.arrayConcatenationOdd(wordsArray,i,"=")
 wordsArray = ws.arrayConcatenationOdd(wordsArray,"^","|")
+
 wordsArray = ws.commentChecker(wordsArray)
+
 wordsArray = ws.commaStringChecker(wordsArray)
-wordsArray = ws.someThingCheck(wordsArray)
+
+wordsArray = ws.alphaNumeric(wordsArray)
+
 wordsArray = arrayFlattener(wordsArray)
+
 wordsArray = ws.floatMakerType1(wordsArray)
+
 wordsArray = ws.floatMakerType2(wordsArray)
 print(wordsArray)
 """------xx------id-----xx-------"""
