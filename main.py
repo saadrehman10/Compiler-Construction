@@ -61,6 +61,7 @@ wordsArray = arrayFlattener(wordsArray)
 wordsArray = ws.floatMakerType1(wordsArray)
 
 wordsArray = ws.floatMakerType2(wordsArray)
+
 print(wordsArray)
 """------xx------id-----xx-------"""
 #lexical analysis ka lia token genrater ko call kar raha ha
@@ -71,4 +72,3 @@ for i in wordsArray:
         line_number +=1 #ya line number ko update kar raha ha           
     elif isinstance(hold, list):
         print(hold)
-    

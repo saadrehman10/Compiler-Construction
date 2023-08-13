@@ -203,3 +203,22 @@ for i in range (len(wordsArray)):
 
 
 """ print (tokenArray) """
+
+
+"""   while "\"" in array or "\'" in array:
+       commentIndices1 = [i for i, elem in enumerate(array) if elem == "\""]#commentIndices1 = [i for i, elem in enumerate(array) if elem == "\""] ya function array ko itarate kar ka  index ko find kar raha ha or us ki index ko array ma store kar raha ha
+                                                                            # index kar raha value nahi 
+                                                                            # enumerate function array ko itarate kar ka index or value dono ko return kar raha ha
+        commentIndices2 = [i for i, elem in enumerate(array) if elem == "\'"]#is ka seprate function banaya hai kiu ka ya error de raha tha
+        if len(commentIndices1) < 2 or len(commentIndices2) < 2:
+            break
+        else:
+            index1 = commentIndices1[0]
+            index2 = commentIndices1[1] + 1   
+            strArray = array[index1:index2]
+            strArray= "".join(strArray)
+            array[commentIndices1[0]] = strArray
+            index1+=1
+            index2+=1
+            array = array[:index1] + array[index2:]   
+    return array# array ko return kar raha ha """

@@ -77,23 +77,25 @@ def commentChecker(array):# is function ma array ma check kar ta ha ka gha par #
 
     return array# array ko return kar raha ha
 
-def commaStringChecker(array):
-    while "\"" in array or "\'" in array:
-        commentIndices1 = [i for i, elem in enumerate(array) if elem == "\""]#commentIndices1 = [i for i, elem in enumerate(array) if elem == "\""] ya function array ko itarate kar ka  index ko find kar raha ha or us ki index ko array ma store kar raha ha
-                                                                            # index kar raha value nahi 
-                                                                            # enumerate function array ko itarate kar ka index or value dono ko return kar raha ha
-        commentIndices2 = [i for i, elem in enumerate(array) if elem == "\'"]#is ka seprate function banaya hai kiu ka ya error de raha tha
-        if len(commentIndices1) < 2 or len(commentIndices2) < 2:
-            break
-        index1 = commentIndices1[0]
-        index2 = commentIndices1[1] + 1   
-        strArray = array[index1:index2]
-        strArray= "".join(strArray)
-        array[commentIndices1[0]] = strArray
-        index1+=1
-        index2+=1
-        array = array[:index1] + array[index2:]   
-    return array# array ko return kar raha ha
+def commaStringChecker(array):# is function ma array ma check kar ta ha ka gha par " " aya ha or us ka bad wala word ko remove kar ta ha
+    new_array = []
+    i = 0
+    while i < len(array):
+        if "\"" in array[i] or "\'" in array[i]:
+            quote = array[i]
+            new_array.append(quote)
+            i += 1
+            while i < len(array) and array[i] != quote:
+                new_array[-1] += array[i]
+                i += 1
+            if i < len(array):
+                new_array[-1] += array[i]
+        else:
+            new_array.append(array[i])
+        i += 1
+    return new_array
+
+
 
 
 def alphaNumeric(array):# ya checck kar ta ha 77723324jhkhkj32234 is type ka string ko 77723324 jhkhkj 32234 is type ma split kar ta ha
