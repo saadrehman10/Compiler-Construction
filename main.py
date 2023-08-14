@@ -51,6 +51,7 @@ for i in concatArray2:
 wordsArray = ws.arrayConcatenationOdd(wordsArray,"^","|")
 
 wordsArray = ws.commentChecker(wordsArray)
+wordsArray = ws.commentCheckersingle(wordsArray)
 
 wordsArray = ws.commaStringChecker(wordsArray)
 

@@ -83,7 +83,15 @@ def commentChecker(array):# is function ma array ma check kar ta ha ka gha par #
             index2 = commentIndices[1] + 1
             array = array[:index1] + array[index2:]
         return array# array ko return kar raha ha
-    
+
+def commentCheckersingle(array):# is function ma array ma check kar ta ha ka gha par ## aya ha or us ka bad wala word ko remove kar ta ha
+    commentIndices = [i for i, elem in enumerate(array) if elem == "#"]
+    commentIndices1 = [i for i, elem in enumerate(array) if elem == "n"]
+    while "#" in array:
+        index1 = commentIndices[0]
+        index2 = commentIndices1[0] 
+        array = array[:index1] + array[index2:]
+    return array# array ko return kar raha ha    
 
     
 
