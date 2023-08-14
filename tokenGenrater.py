@@ -19,9 +19,11 @@ def tokenGen(words, line_number):
         elif id.isLogocalOperators(words):
             tokenArray.append(('Logical-Operater', words, line_number)) 
         elif id.isTerminator(words):
-            tokenArray.append(('Terminater', words, line_number)) 
+            tokenArray.append(('Terminator', words, line_number)) 
         elif id.isString01(words):
-            tokenArray.append(('String', words, line_number))        
+            tokenArray.append(('String', words, line_number))    
+        elif id.isComa(words):  
+            tokenArray.append(('Invalid', words, line_number))          
         elif id.isPunctuator(words):  
             tokenArray.append(('Punctuator', words, line_number))             
         elif id.isBoolean(words):
@@ -33,6 +35,7 @@ def tokenGen(words, line_number):
         elif id.isString(words):
             tokenArray.append(('Identifier', words, line_number))                  
         else:
-            tokenArray.append(('Unknown', words, line_number)) 
+            tokenArray.append(('Invalid', words, line_number)) 
         return tokenArray
     
+ 

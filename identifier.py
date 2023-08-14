@@ -4,8 +4,7 @@ def isKeyword(element):
     keyword = ['if', 'else', 'elif', 'while',
         'for', 'stop', 'pass','return', 'carryon'
         'bprint','render','action','pub','take','package'
-        'pvt','lock','unlock','char','int','float','str',
-        'interface', 'while','string','bprint','action','return']#remove the line after testing
+        'pvt','lock','unlock','char','int','float','str',]    
 
     if element in keyword:
         return True
@@ -19,7 +18,7 @@ def isInteger(element):
 
     
 def isString(element):
-        pattern = r"^[a-zA-Z0-9]+$"
+        pattern = r"^[a-zA-Z0-9_@]+$"
         return bool(regex.match(pattern, element))
 
 
@@ -38,13 +37,16 @@ def isFloat(element):
         return bool(regex.match(pattern, element))
 
 def isTerminator(element):
-        pattern = r"^\:|\;|\#|\#+\#$"
+        pattern = r"^\:|\;$"
         return bool(regex.match(pattern, element))
 
 def isPunctuator(element):
-        pattern = r"^\[|\]|\{|\}|\(|\)|\'|\"|\?|\,|\.$"
+        pattern = r"^\[|\]|\{|\}|\(|\)|\?|\,|\.$"
         return bool(regex.match(pattern, element))
     
+def isComa(element):
+        pattern = r"^\'|\""
+        return bool(regex.match(pattern, element))
 
 def isOperator(element):
         pattern = r"^\+|\-|\/|\*|\%|\^|\/+\/|\++\+|\-+\-$"

@@ -67,33 +67,43 @@ def arrayConcatenationOdd(array,operater01,operater02):#same as arrayConcatenati
     return array# array ko return kar raha ha
 
 def commentChecker(array):# is function ma array ma check kar ta ha ka gha par ## aya ha or us ka bad wala word ko remove kar ta ha
-    while "##" in array:
-        commentIndices = [i for i, elem in enumerate(array) if elem == "##"]
-        if len(commentIndices) < 2:
-            break
-        index1 = commentIndices[0]
-        index2 = commentIndices[1] + 1
-        array = array[:index1] + array[index2:]
+    commentIndices = [i for i, elem in enumerate(array) if elem == "##"]
+    if len(commentIndices) == 1:
+        index1 = array.index("##")
+        array1 = array[index1:]
+        temp = "".join(element for element in array1)
+        array = array[:index1]
+        array.append(temp)
+        return array
+    else:
+        while "##" in array:
+            if len(commentIndices) < 2:
+                break
+            index1 = commentIndices[0]
+            index2 = commentIndices[1] + 1
+            array = array[:index1] + array[index2:]
+        return array# array ko return kar raha ha
+    
 
-    return array# array ko return kar raha ha
+    
 
-def commaStringChecker(array):# is function ma array ma check kar ta ha ka gha par " " aya ha or us ka bad wala word ko remove kar ta ha
-    new_array = []
+def commaStringChecker(array):# is function ma array ma check kar ta ha ka gha par " aya ha or us ka bad wala word ko remove kar ta ha
+    newArray1 = []
     i = 0
     while i < len(array):
         if "\"" in array[i] or "\'" in array[i]:
             quote = array[i]
-            new_array.append(quote)
+            newArray1.append(quote)
             i += 1
             while i < len(array) and array[i] != quote:
-                new_array[-1] += array[i]
+                newArray1[-1] += array[i]
                 i += 1
             if i < len(array):
-                new_array[-1] += array[i]
+                newArray1[-1] += array[i]
         else:
-            new_array.append(array[i])
+            newArray1.append(array[i])
         i += 1
-    return new_array
+    return newArray1
 
 
 
