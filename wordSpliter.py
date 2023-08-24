@@ -88,9 +88,13 @@ def commentCheckersingle(array):# is function ma array ma check kar ta ha ka gha
     commentIndices = [i for i, elem in enumerate(array) if elem == "#"]
     commentIndices1 = [i for i, elem in enumerate(array) if elem == "n"]
     while "#" in array:
-        index1 = commentIndices[0]
-        index2 = commentIndices1[0] 
-        array = array[:index1] + array[index2:]
+        if len(commentIndices1) == 0:
+            index1 = commentIndices[0]
+            array = array[:index1]
+        else:   
+            index1 = commentIndices[0]
+            index2 = commentIndices1[0] 
+            array = array[:index1] + array[index2:]
     return array# array ko return kar raha ha    
 
     
